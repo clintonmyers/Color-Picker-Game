@@ -1,0 +1,101 @@
+/*
+* {
+    border: solid 1px greenyellow;
+}
+*/
+html, body, .main {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.top, .middle, .middle60, .bottom, p {
+    margin: 0 auto;
+}
+
+.top {
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+    background-color: steelblue;
+    color: whitesmoke;
+}
+
+.bigger {
+    font-size: 2em;
+}
+
+.selected {
+    background-color: steelblue;
+    color: whitesmoke;
+}
+
+.middle {
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    background-color: whitesmoke;
+    color: steelblue;
+}
+
+.middle60 {
+    width: 60%;
+}
+
+.message {
+    text-align: center;
+}
+
+.newcolor {
+    float: left;
+}
+
+.difficulty {
+    float: right;
+}
+
+.difficulty, .newcolor {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+}
+
+.bottom {
+    height: 100%;
+    background-color: rgb(23, 23, 23);
+}
+
+.btm-container {
+    padding-top: 30px;
+    display: inline-block;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px;
+    grid-gap: 15px;
+    align-self: center;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.color {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+@media (max-width: 500px) {
+    .btm-container {
+        grid-template-rows: 75px 75px 75px;
+        grid-template-columns: 75px 75px 75px;
+    }
+
+    .color {
+        width: 75px;
+        height: 75px;
+    }
+
+    .middle60 {
+        width: 100%;
+        font-size: .8em;
+    }
+}

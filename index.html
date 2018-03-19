@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+            <p>
+                THE GREAT
+                <br>
+                <span class="bigger"></span>
+                <br>
+                GUESSING GAME
+            </p>
+        </div>
+        <div class="middle">
+            <div class="middle60">
+                <span onclick="setup()" class="newcolor">NEW COLORS</span>
+                <span class="message"></span>
+                <div onclick="changeDiff(0)" class="difficulty">EASY</div>
+                <div onclick="changeDiff(1)" class="difficulty selected">MEDIUM</div>
+                <div onclick="changeDiff(2)" class="difficulty">HARD</div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="btm-container">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
