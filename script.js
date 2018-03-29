@@ -21,7 +21,7 @@ var randRGB = function() {
 }
 
 var randDiv = function() {
-    return (Math.floor(Math.random() * color.length) + 1);
+    return Math.floor(Math.random() * color.length);
 }
 
 var createRGB = function() {
