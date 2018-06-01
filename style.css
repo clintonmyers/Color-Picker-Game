@@ -35,10 +35,13 @@ html, body, .main {
     vertical-align: middle;
     background-color: whitesmoke;
     color: steelblue;
+    text-align: center;
 }
 
 .middle60 {
     width: 60%;
+    display: grid;
+    grid-template-columns: 15% 50% 9% 14% 10%;
 }
 
 .message {
@@ -65,7 +68,6 @@ html, body, .main {
 
 .btm-container {
     padding-top: 30px;
-    display: inline-block;
     margin: 0 auto;
     display: grid;
     grid-template-rows: 150px 150px 150px;
@@ -83,19 +85,33 @@ html, body, .main {
     margin: 0 auto;
 }
 
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s linear;
+}
+  
+  .hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 1s, opacity 1s linear;
+}
+
 @media (max-width: 500px) {
     .btm-container {
-        grid-template-rows: 75px 75px 75px;
-        grid-template-columns: 75px 75px 75px;
+        grid-template-rows: 30vw 30vw 30vw;
+        grid-template-columns: 30vw 30vw 30vw;
+        grid-gap: 1vw;
     }
 
     .color {
-        width: 75px;
-        height: 75px;
+        width: 27vw;
+        height: 27vw;
     }
 
     .middle60 {
         width: 100%;
         font-size: .8em;
+        grid-template-columns: 25% 25% 15% 20% 15%;
     }
 }

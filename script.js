@@ -1,35 +1,30 @@
 /*
 What's left to do?
 Match the font
-Fix bugs
-  RGB numbers don't appear all the time
-  double functions
+Fade
 */
 
-//Variables
 const bigger = document.getElementsByClassName("bigger")[0];
-var color = document.getElementsByClassName("color");
-var answer = 0;
+let color = document.getElementsByClassName("color");
+let diff = 1;
 
-//Reusable Functions
-
-var assignVar = function() {
+let assignlet = function() {
     
 }
-var randRGB = function() {
+let randRGB = function() {
     return Math.floor(Math.random() * 256);
 }
 
-var randDiv = function() {
+let randDiv = function() {
     return Math.floor(Math.random() * color.length);
 }
 
-var createRGB = function() {
+let createRGB = function() {
     return 'rgb(' + randRGB() + ', ' + randRGB() + ', ' + randRGB() + ')';
 }
 
-var changeDiff = function(diff) {
-    var diffDiv = document.getElementsByClassName("difficulty");
+let changeDiff = function(diff) {
+    let diffDiv = document.getElementsByClassName("difficulty");
     for(i = 0; i < 3; i++) {
         diffDiv[i].className = 'difficulty';
         console.log(diffDiv[i].className);
@@ -37,19 +32,15 @@ var changeDiff = function(diff) {
     diffDiv.item(diff).className += ' selected';
     console.log(diffDiv.item(diff).className);
     document.getElementsByClassName("btm-container")[0].innerHTML = '';
-    var divs = (diff * 3) + 3;
+    let divs = (diff * 3) + 3;
     for(i = 0; i < divs; i++) {
         document.getElementsByClassName("btm-container")[0].innerHTML += '<div class="color"></div>';
     }
     console.log(document.getElementsByClassName("btm-container")[0].innerHTML);
-    setup();
-}
-
-var setup = function() {
     document.getElementsByClassName("message")[0].textContent = '';
     document.getElementsByClassName("top")[0].style.backgroundColor = "steelblue";
     color = document.getElementsByClassName("color");
-    answer = randDiv();
+    let answer = randDiv();
     for(i = 0; i < color.length; i++) {
         color[i].className = 'color';
         color[i].style.backgroundColor = createRGB();
@@ -65,20 +56,24 @@ var setup = function() {
                     color[i].style.backgroundColor = bigger.textContent;
                 }
                 document.getElementsByClassName('top')[0].style.backgroundColor = bigger.textContent;
-                //fade all in
                 document.getElementsByClassName("message")[0].textContent = 'YOU WIN!';
+                for(i = 0; i < color.length; i++) {
+                    if (color[i].className === 'color hidden') {
+                        color[i].className = 'color visible';
+                    }
+                }
             });
         } else {
             color[i].addEventListener("click", function(){
-                this.style.backgroundColor = "rgb(23, 23, 23)";
-                console.log(this);
-                console.log(this.style.backgroundColor);
                 document.getElementsByClassName("message")[0].textContent = 'guess again';
+                this.className += ' hidden';
             });
         }
     }
 }
 
-//Main Function
+let setup = function() {
+    changeDiff((color.length/3)-1);
+}
 
 changeDiff(1);
